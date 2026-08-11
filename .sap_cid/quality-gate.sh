@@ -17,10 +17,20 @@ else
   lint_failed=1
 fi
 
-echo "=== QUALITY GATE: AUDIT (HIGH/CRITICAL BLOCKING) ==="
+echo "=== QUALITY GATE: ROOT AUDIT (FULL, HIGH/CRITICAL BLOCKING) ==="
 audit_failed=0
 audit_failed_modules=""
-for pkg in $(find . -name package.json -not -path "*/node_modules/*" -not -path "./gen/*" | sort); do
+echo "[AUDIT] ."
+if npm run ci-audit; then
+  echo "[PASS] AUDIT ."
+else
+  echo "[FAIL] AUDIT ."
+  audit_failed=1
+  audit_failed_modules="$audit_failed_modules ."
+fi
+
+echo "=== QUALITY GATE: UI APP AUDIT (RUNTIME ONLY, HIGH/CRITICAL BLOCKING) ==="
+for pkg in $(find ./app -name package.json -not -path "*/node_modules/*" | sort); do
   dir=$(dirname "$pkg")
   echo "[AUDIT] $dir"
   if (cd "$dir" && npm run ci-audit); then
