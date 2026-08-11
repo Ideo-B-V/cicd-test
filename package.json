@@ -17,7 +17,9 @@
     "eslint": "^10.8.1"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "lint": "eslint ./",
+    "ci-lint": "eslint ./ --format checkstyle --output-file defaultlint.xml"
   },
   "private": true,
   "imports": {
