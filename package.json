@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "dependencies": {
-    "@sap/cds": "^10"
   },
   "devDependencies": {
     "@cap-js/cds-typer": ">=0.1",
@@ -12,7 +11,10 @@
     "@sap/cds-dk": "^10",
     "@types/node": "^24.0.0",
     "tsx": "^4",
-    "typescript": "^6.0.0"
+    "typescript": "^6.0.0",
+    "@sap/cds": "^10",
+    "@typescript-eslint/parser": "^8.67.0",
+    "eslint": "^10.8.1"
   },
   "scripts": {
     "start": "cds-serve"
