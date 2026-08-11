@@ -12,3 +12,6 @@ stages:
   additionalTests:
     runFirst:
       command: "sh .sap_cid/quality-gate.sh"
+  patrickTest: 
+    runFirst:
+      command: "npm audit"
