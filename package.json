@@ -18,7 +18,8 @@
   "scripts": {
     "start": "cds-serve",
     "lint": "eslint ./",
-    "ci-lint": "eslint ./ --format checkstyle --output-file defaultlint.xml"
+    "ci-lint": "eslint ./ --format checkstyle --output-file defaultlint.xml",
+    "ci-audit": "npm audit --audit-level=high"
   },
   "private": true,
   "imports": {

@@ -4,7 +4,9 @@
   "main": "webapp/index.html",
   "scripts": {
     "build": "ui5 build preload --clean-dest",
-    "start": "ui5 serve"
+    "start": "ui5 serve",
+    "ci-lint": "echo \"No ESLint configured for this UI module\"",
+    "ci-audit": "npm audit --audit-level=high"
   },
   "devDependencies": {
     "@ui5/cli": "^4",
